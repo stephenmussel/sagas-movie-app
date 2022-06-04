@@ -19,8 +19,12 @@ function* rootSaga() {
 
 function* fetchDetails(action) {
     try {
-        console.log('fetchDetails saga wired!');  
-              
+        console.log('fetchDetails saga wired!');
+        const movieDetails = action.payload;
+        console.log('movieDetails:', movieDetails);
+        yield put({ type: 'SET_DETAILS', payload: movieDetails });
+          
+
         
     } catch(err) {
         console.log('err in fetchDetails:', err);
@@ -43,6 +47,16 @@ function* fetchAllMovies() {
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
+
+// stores details of selected movie
+const details = (state =[], action) => {
+    switch(action.type) {
+        case 'SET_DETAILS':
+            return action.payload;
+        default:
+            return state;
+    }
+}
 
 // Used to store movies returned from the server
 const movies = (state = [], action) => {
@@ -69,6 +83,7 @@ const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        details,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
