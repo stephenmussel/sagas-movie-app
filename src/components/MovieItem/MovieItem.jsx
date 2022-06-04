@@ -1,7 +1,15 @@
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
 function MovieItem({ movie }) {
+    
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const showDetails = () => {
         console.log('clicked movie with id:', movie.id);
+
+        dispatch({ type: 'FETCH_DETAILS', payload: movie })
     }
     
     return (
