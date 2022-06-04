@@ -11,6 +11,8 @@ function MovieItem({ movie }) {
 
         const action = { type: 'FETCH_DETAILS', payload: movie };
         dispatch(action);
+
+        history.push(`/details/${movie.id}`)
     }
     
     return (
