@@ -9,7 +9,8 @@ function MovieItem({ movie }) {
     const showDetails = () => {
         console.log('clicked movie with id:', movie.id);
 
-        dispatch({ type: 'FETCH_DETAILS', payload: movie })
+        const action = { type: 'FETCH_DETAILS', payload: movie };
+        dispatch(action);
     }
     
     return (
