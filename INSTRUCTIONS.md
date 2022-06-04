@@ -1,22 +1,13 @@
 # React-Redux with Redux-Sagas
 
-This week you have two separate parts to work on:
-
-1. Adding features to an existing Movie App with React-Redux and Redux-Sagas
-2. Practicing SQL
-
-Be sure to do both parts!
-
----
-
 ## Add the Detail View to our Movie App
 
 For this weekend challenge you'll be expanding on a movie management application! We're already able to see movies that exist in our DB. We'll need to be able to see detailed view for each individual movie, including all genres associated with that movie. This is a very common pattern, to go from a list to showing more information about a single item. 
 
 ## Database Setup
 
-1. Create a database named `saga_movies_weekend`
-2. Run the queries from `database.sql` on the `saga_movies_weekend` database
+1. Create a database named `saga-movies-app`
+2. Run the queries from `database.sql` on the `saga-movies-app` database
 
 ## Install Dependencies
 
