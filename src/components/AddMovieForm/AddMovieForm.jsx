@@ -52,7 +52,6 @@ export default AddMovieForm;
 
 /*
 
-- `Cancel` button, which should bring the user to the Home/List Page
 - `Save` button, which should 
     - save these inputs in the database 
     - and bring the user to the Home/List Page (which now has the new movie)
