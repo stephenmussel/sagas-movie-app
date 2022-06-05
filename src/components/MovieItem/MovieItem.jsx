@@ -11,6 +11,7 @@ function MovieItem({ movie }) {
         console.log('movie details:', movie);
 
         dispatch({ type: 'FETCH_DETAILS', payload: movie });
+        dispatch({ type: 'FETCH_GENRES', payload: movie.id })
         history.push(`/details/${movie.id}`)
     }
     

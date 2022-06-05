@@ -15,6 +15,18 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('FETCH_DETAILS', fetchDetails);
+    yield takeEvery('FETCH_GENRES', fetchGenres);
+}
+
+function* fetchGenres(action) {
+    try {
+        console.log('fetchGenres saga wired!');
+        
+
+    } catch(err) {
+        console.log('err in fetchGenres:', err);
+        
+    }
 }
 
 // NOTES why do you need to GET details when it's already sent from MovieItem?
