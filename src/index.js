@@ -21,8 +21,11 @@ function* rootSaga() {
 function* fetchGenres(action) {
     try {
         console.log('fetchGenres saga wired!');
+        const movieId = action.payload;
+        console.log('movieId:', movieId);
+        const movieGenre = yield axios.get(`/api/genre/${movieId}`); // GETs genres of selected movie
+        console.log('movieGenre:', movieGenre);
         
-
     } catch(err) {
         console.log('err in fetchGenres:', err);
         
