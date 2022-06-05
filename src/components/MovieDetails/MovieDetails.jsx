@@ -1,9 +1,11 @@
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 function MovieDetails() {
 
     const details = useSelector(store => store.details);
     const genres = useSelector(store => store.genres);
+    const history = useHistory();
 
     return (
         <div>
@@ -22,6 +24,7 @@ function MovieDetails() {
                     ))}
                 </div>
             </div>
+            <button onClick={() => history.push('/')}>Back To List</button>
         </div>
     )
 }
