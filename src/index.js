@@ -16,6 +16,21 @@ function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('FETCH_DETAILS', fetchDetails);
     yield takeEvery('FETCH_GENRES', fetchGenres);
+    yield takeEvery('FETCH_SELECT_OPTIONS', fetchSelectOptions);
+}
+
+function* fetchSelectOptions(action) {
+    try {
+        console.log('fetchSelectOptions wired!');
+
+        const genres = yield axios.get('/api/genre');
+        console.log('genres:', genres.data);
+        
+        
+
+    } catch(err) {
+        console.log('err in fetchSelect');
+    }
 }
 
 function* fetchGenres(action) {

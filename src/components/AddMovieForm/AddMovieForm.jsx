@@ -5,6 +5,8 @@ import { useDispatch, useSelect } from 'react-redux';
 function AddMovieForm() {
 
     const history = useHistory();
+    const dispatch = useDispatch();
+    
     const [newMovie, setNewMovie] = useState({
         title: "",
         poster: "",
@@ -14,12 +16,12 @@ function AddMovieForm() {
 
     useEffect(() => {
         console.log('in useEffect');
-        fetchGenres();
+        fetchSelectOptions();
     }, [])
 
-    const fetchGenres = () => {
-        console.log('in fetchGenres');
-        dispatchEvent({ type: 'FETCH_GENRES'});
+    const fetchSelectOptions = () => {
+        console.log('in fetchSelectOptions');
+        dispatch({ type: 'FETCH_SELECT_OPTIONS'});
     }
 
     const handleSubmit = (event) => {
