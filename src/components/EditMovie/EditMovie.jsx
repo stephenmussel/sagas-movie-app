@@ -1,13 +1,20 @@
 import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom';
 
 function EditMovie() {
 
     const details = useSelector(store => store.details)
+    const history = useHistory();
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('clicked save!');
+    }
 
     return (
         <div>
             <h1>Edit: <em>{details.title}</em></h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input 
                     type="text"
                     placeholder="Title"
@@ -18,12 +25,8 @@ function EditMovie() {
                     placeholder="Description"
                     style={{ marginBottom: 5 }}
                 /><br />
-                <input 
-                    type="submit"
-                    value="Save"
-                    style={{ marginRight: 5 }}
-                />
-                <button>Cancel</button>
+                <input type="submit" value="Save" style={{ marginRight: 5 }} />
+                <button onClick={() => history.push(`/details/${details.id}`)}>Cancel</button>
             </form>
         </div>
     )
