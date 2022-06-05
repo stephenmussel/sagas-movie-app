@@ -1,11 +1,25 @@
-import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function MovieDetails() {
 
     const details = useSelector(store => store.details);
     const genres = useSelector(store => store.genres);
     const history = useHistory();
+    const dispatch = useDispatch();
+
+    // REVIEW: useParams
+    const { id } = useParams();
+
+    // NOTES: more verbose version of line 12
+    const allParams = useParams();
+    const movieId = allParams.id;
+
+    useEffect(() => {
+        console.log('in details useEffect!');
+        dispatch({ type: 'FETCH_DETAILS', payload: {id: movieId}});
+    }, [])
 
     return (
         <div>

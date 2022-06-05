@@ -81,5 +81,3 @@ function AddMovieForm() {
 }
 
 export default AddMovieForm;
-
-// TODO: save button saves inputs in the DB
