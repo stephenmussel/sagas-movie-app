@@ -1,26 +1,42 @@
 import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch, useSelect } from 'react-redux';
 
 function AddMovieForm() {
 
     const history = useHistory();
+    const [newMovie, setNewMovie] = useState({
+        title: "",
+        poster: "",
+        description: "",
+        genre_id: ""
+    });
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('clicked save!');
+    }
 
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <h1>Add Movie</h1>
             <input 
                 type="text" 
                 placeholder="Title" 
                 style={{ marginBottom: 5 }}
+                value={newMovie.title}
             /><br />
             <input 
                 type="text" 
                 placeholder="URL" 
                 style={{ marginBottom: 5 }} 
+                value={newMovie.poster}
             /><br />
             <textarea 
                 type="text" 
                 placeholder="Description" 
                 style={{ marginBottom: 5 }} 
+                value={newMovie.description}
             /><br />
             <label>
                 <select style={{ marginBottom: 5 }}>
