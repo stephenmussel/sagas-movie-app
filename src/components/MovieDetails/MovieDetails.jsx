@@ -9,15 +9,15 @@ function MovieDetails() {
     const history = useHistory();
     const dispatch = useDispatch();
 
-    // REVIEW: useParams
-    const { id } = useParams();
-
-    // NOTES: more verbose version of line 12
-    const allParams = useParams();
-    const movieId = allParams.id;
+    // NOTES: like useHistory and useDispatch
+    // NOTES: also need to add `:id` to client side <Route>
+    const params = useParams();
+    const movieId = params.id;
 
     useEffect(() => {
         console.log('in details useEffect!');
+
+        // fetches details based on movieId passed!
         dispatch({ type: 'FETCH_DETAILS', payload: {id: movieId}});
     }, [])
 
