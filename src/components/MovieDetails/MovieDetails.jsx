@@ -18,7 +18,7 @@ function MovieDetails() {
                 <p><b>Genres</b></p>
                 <div>
                     {genres.map((each, i) => (
-                        <p key={each.i}>{each.name}</p>
+                        <p key={i}>{each.name}</p>
                     ))}
                 </div>
             </div>
