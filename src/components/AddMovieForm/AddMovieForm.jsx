@@ -22,50 +22,58 @@ function AddMovieForm() {
 
     const fetchSelectOptions = () => {
         console.log('in fetchSelectOptions');
-        dispatch({ type: 'FETCH_SELECT_OPTIONS'});
+        dispatch({ type: 'FETCH_SELECT_OPTIONS' });
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('clicked save!');
         console.log('newMovie:', newMovie);
+
+        history.push('/');
     }
 
-    const handleSelect = () => {
-        console.log('selected genre');
-    }
-
-    return(
+    return (
         <form onSubmit={handleSubmit}>
             <h1>Add Movie</h1>
-            <input 
-                type="text" 
-                placeholder="Title" 
+            <input
+                type="text"
+                placeholder="Title"
                 style={{ marginBottom: 5 }}
                 value={newMovie.title}
-                onChange={(event) => setNewMovie({...newMovie, title: event.target.value})}
+                onChange={(event) => setNewMovie({ ...newMovie, title: event.target.value })}
             /><br />
-            <input 
-                type="text" 
-                placeholder="URL" 
-                style={{ marginBottom: 5 }} 
+            <input
+                type="text"
+                placeholder="URL"
+                style={{ marginBottom: 5 }}
                 value={newMovie.poster}
+                onChange={(event) => setNewMovie({ ...newMovie, poster: event.target.value })}
             /><br />
-            <textarea 
-                type="text" 
-                placeholder="Description" 
-                style={{ marginBottom: 5 }} 
+            <textarea
+                type="text"
+                placeholder="Description"
+                style={{ marginBottom: 5 }}
                 value={newMovie.description}
+                onChange={(event) => setNewMovie({ ...newMovie, description: event.target.value })}
             /><br />
             <label>
-                <select onChange={handleSelect} style={{ marginBottom: 5 }}>
+                <select
+                    onChange={(event) => setNewMovie({ ...newMovie, genre_id: event.target.value })}
+                    style={{ marginBottom: 5 }}
+                >
                     <option>Select A Genre</option>
                     {genres.map(each => (
-                        <option key={each.id}>{each.name}</option>
+                        <option
+                            key={each.id}
+                            value={each.id}
+                        >
+                            {each.name}
+                        </option>
                     ))}
                 </select>
             </label><br />
-            <input type="submit" value="Save" style={{ marginRight: 5 }}/>
+            <input type="submit" value="Save" style={{ marginRight: 5 }} />
             <button onClick={() => history.push('/')}>Cancel</button>
         </form>
     )
