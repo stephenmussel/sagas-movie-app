@@ -1,8 +1,24 @@
+import { useSelector } from 'react-redux'
+
 function EditMovie() {
-    return(
-        <>
-            <div>Edit Page...</div>
-        </>
+
+    const details = useSelector(store => store.details)
+
+    return (
+        <div>
+            <h1>Edit: <em>{details.title}</em></h1>
+            <form>
+                <input 
+                    type="text"
+                    placeholder="Title"
+                    style={{ marginBottom: 5 }}
+                /><br />
+                <textarea 
+                    type="text"
+                    placeholder="Description"
+                /><br />
+            </form>
+        </div>
     )
 }
 
@@ -11,7 +27,6 @@ export default EditMovie;
 // TODO:
 
 /**
-- Add to the detail page an edit button that brings the user to the edit page.
 
 Edit page should show:
 
