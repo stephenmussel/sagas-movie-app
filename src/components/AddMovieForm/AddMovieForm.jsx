@@ -28,6 +28,7 @@ function AddMovieForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('clicked save!');
+        console.log('newMovie:', newMovie);
     }
 
     const handleSelect = () => {
@@ -42,6 +43,7 @@ function AddMovieForm() {
                 placeholder="Title" 
                 style={{ marginBottom: 5 }}
                 value={newMovie.title}
+                onChange={(event) => setNewMovie({...newMovie, title: event.target.value})}
             /><br />
             <input 
                 type="text" 
