@@ -16,7 +16,14 @@ function EditMovie() {
                 <textarea 
                     type="text"
                     placeholder="Description"
+                    style={{ marginBottom: 5 }}
                 /><br />
+                <input 
+                    type="submit"
+                    value="Save"
+                    style={{ marginRight: 5 }}
+                />
+                <button>Cancel</button>
             </form>
         </div>
     )
