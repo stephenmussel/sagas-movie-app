@@ -25,6 +25,9 @@ function* fetchGenres(action) {
         console.log('movieId:', movieId);
         const genres = yield axios.get(`/api/genre/${movieId}`); // GETs genres of selected movie
         console.log('movieGenre:', genres.data);
+
+        // sends genres to genres reducer
+        yield put({ type: 'SET_GENRES', payload: genres.data });
         
     } catch(err) {
         console.log('err in fetchGenres:', err);
