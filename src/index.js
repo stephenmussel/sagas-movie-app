@@ -17,6 +17,18 @@ function* rootSaga() {
     yield takeEvery('FETCH_DETAILS', fetchDetails);
     yield takeEvery('FETCH_GENRES', fetchGenres);
     yield takeEvery('FETCH_SELECT_OPTIONS', fetchSelectOptions);
+    yield takeEvery('CREATE_MOVIE', createMovie)
+}
+
+function* createMovie(action) {
+    try {
+        console.log('createMovie saga wired!');
+        
+
+    } catch(err) {
+        console.log('err in createMovie:', err);
+        
+    }
 }
 
 function* fetchSelectOptions(action) {

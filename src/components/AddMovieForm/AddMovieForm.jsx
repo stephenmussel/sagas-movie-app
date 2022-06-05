@@ -30,6 +30,7 @@ function AddMovieForm() {
         console.log('clicked save!');
         console.log('newMovie:', newMovie);
 
+        dispatch({ type: 'CREATE_MOVIE', payload: newMovie});
         history.push('/');
     }
 
@@ -81,11 +82,4 @@ function AddMovieForm() {
 
 export default AddMovieForm;
 
-// TODO:
-
-/*
-
-- `Save` button, which should 
-    - save these inputs in the database 
-    - and bring the user to the Home/List Page (which now has the new movie)
- */
+// TODO: save button saves inputs in the DB
