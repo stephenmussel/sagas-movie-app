@@ -25,9 +25,10 @@ function* fetchSelectOptions(action) {
 
         const genres = yield axios.get('/api/genre');
         console.log('genres:', genres.data);
-        
-        
 
+        // sends all genres select options to reducer
+        yield put({ type: 'SET_GENRES', payload: genres.data});
+        
     } catch(err) {
         console.log('err in fetchSelect');
     }
