@@ -23,11 +23,15 @@ function* rootSaga() {
 function* createMovie(action) {
     try {
         console.log('createMovie saga wired!');
-        
+        const newMovie = action.payload;
+        console.log('newMovie:', newMovie);
+        yield axios.post('/api/movie', newMovie)
 
+        // NOTES: need this even though there's a useEffect to fetch on the list view. Why?
+        yield put({ type: 'FETCH_MOVIES'});
+        
     } catch(err) {
         console.log('err in createMovie:', err);
-        
     }
 }
 
