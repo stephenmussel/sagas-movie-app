@@ -1,12 +1,13 @@
 import { useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { useDispatch, useSelect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 function AddMovieForm() {
 
     const history = useHistory();
     const dispatch = useDispatch();
-    
+    const genres = useSelector(store => store.genres);
+
     const [newMovie, setNewMovie] = useState({
         title: "",
         poster: "",
@@ -56,6 +57,10 @@ function AddMovieForm() {
             /><br />
             <label>
                 <select onChange={handleSelect} style={{ marginBottom: 5 }}>
+                    <option>Select A Genre</option>
+                    {genres.map(each => (
+                        <option key={each.id}>{each.name}</option>
+                    ))}
                 </select>
             </label><br />
             <input type="submit" value="Save" style={{ marginRight: 5 }}/>

@@ -47,7 +47,6 @@ function* fetchGenres(action) {
         
     } catch(err) {
         console.log('err in fetchGenres:', err);
-        
     }
 }
 
