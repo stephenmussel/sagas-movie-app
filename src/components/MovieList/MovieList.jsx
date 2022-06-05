@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css'
 import MovieItem from '../MovieItem/MovieItem';
+import AddMovieForm from '../AddMovieForm/AddMovieForm';
 
 function MovieList() {
 
@@ -15,6 +16,7 @@ function MovieList() {
     return (
         <main>
             <h1>MovieList</h1>
+            <AddMovieForm />
             <section className="movies">
                 {movies.map(movie => {
                     return (
