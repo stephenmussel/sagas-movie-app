@@ -8,10 +8,9 @@ function MovieItem({ movie }) {
 
     const showDetails = () => {
         console.log('clicked movie with id:', movie.id);
+        console.log('movie details:', movie);
 
-        const action = { type: 'FETCH_DETAILS', payload: movie };
-        dispatch(action);
-
+        dispatch({ type: 'FETCH_DETAILS', payload: movie });
         history.push(`/details/${movie.id}`)
     }
     
@@ -21,7 +20,7 @@ function MovieItem({ movie }) {
             <img 
                 src={movie.poster} 
                 alt={movie.title} 
-                onClick={() => showDetails(movie.id)}
+                onClick={showDetails}
             />
         </div>
     )

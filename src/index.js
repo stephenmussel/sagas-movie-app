@@ -17,18 +17,20 @@ function* rootSaga() {
     yield takeEvery('FETCH_DETAILS', fetchDetails);
 }
 
+// NOTES why do you need to GET details when it's already sent from MovieItem?
 function* fetchDetails(action) {
     try {
         console.log('fetchDetails saga wired!');
-        const movieDetails = action.payload;
-        console.log('movieDetails:', movieDetails);
-        yield put({ type: 'SET_DETAILS', payload: movieDetails });
-          
+        const movie = action.payload; // details of selected movie
+        console.log('movie id:', movie.id);
+        const movieDetails = yield axios.get(`/api/movie/details/${movie.id}`) // GETs details of selected movie
+        console.log('movieDetails:', movieDetails.data);
 
+        // sends selected movie details to reducer
+        yield put({ type: 'SET_DETAILS', payload: movieDetails.data });
         
     } catch(err) {
-        console.log('err in fetchDetails:', err);
-        
+        console.log('err in fetchDetails:', err); 
     }
 }
 
@@ -41,8 +43,7 @@ function* fetchAllMovies() {
 
     } catch {
         console.log('get all error');
-    }
-        
+    }   
 }
 
 // Create sagaMiddleware
@@ -68,22 +69,11 @@ const movies = (state = [], action) => {
     }
 }
 
-// Used to store the movie genres
-const genres = (state = [], action) => {
-    switch (action.type) {
-        case 'SET_GENRES':
-            return action.payload;
-        default:
-            return state;
-    }
-}
-
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
-        details,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
