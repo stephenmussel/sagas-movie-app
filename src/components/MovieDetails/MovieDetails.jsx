@@ -21,6 +21,13 @@ function MovieDetails() {
         dispatch({ type: 'FETCH_DETAILS', payload: {id: movieId}});
     }, [])
 
+    const updateMovie = (detailsId) => {
+        console.log('clicked edit!');
+        console.log('movie to edit id:', detailsId);
+
+        history.push('/edit-movie');
+    }
+
     return (
         <div>
             <h3>{details.title}</h3>
@@ -38,7 +45,8 @@ function MovieDetails() {
                     ))}
                 </div>
             </div>
-            <button onClick={() => history.push('/')}>Back To List</button>
+            <button onClick={() => history.push('/')} style={{ marginRight: 5 }}>Back To List</button>
+            <button onClick={() => updateMovie(details.id)}>Edit</button>
         </div>
     )
 }

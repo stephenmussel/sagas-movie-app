@@ -19,7 +19,7 @@ function App() {
         <Route path="/add-movie" exact>
           <AddMovieForm />
         </Route>
-        <Route path="/edit-movie/:id">
+        <Route path="/edit-movie">
           <EditMovie />
         </Route>
       </Router>
