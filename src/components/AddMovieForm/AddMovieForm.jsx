@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelect } from 'react-redux';
 
 function AddMovieForm() {
@@ -12,9 +12,23 @@ function AddMovieForm() {
         genre_id: ""
     });
 
+    useEffect(() => {
+        console.log('in useEffect');
+        fetchGenres();
+    }, [])
+
+    const fetchGenres = () => {
+        console.log('in fetchGenres');
+        dispatchEvent({ type: 'FETCH_GENRES'});
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('clicked save!');
+    }
+
+    const handleSelect = () => {
+        console.log('selected genre');
     }
 
     return(
@@ -39,21 +53,7 @@ function AddMovieForm() {
                 value={newMovie.description}
             /><br />
             <label>
-                <select style={{ marginBottom: 5 }}>
-                    <option>Select Genre</option>
-                    <option value="1">Adventure</option>
-                    <option value="2">Animated</option>
-                    <option value="3">Biographical</option>
-                    <option value="4">Comedy</option>
-                    <option value="5">Disaster</option>
-                    <option value="6">Drama</option>
-                    <option value="7">Epic</option>
-                    <option value="8">Fantasy</option>
-                    <option value="9">Musical</option>
-                    <option value="10">Romantic</option>
-                    <option value="11">Science Fiction</option>
-                    <option value="12">Space-Opera</option>
-                    <option value="13">Superhero</option>
+                <select onChange={handleSelect} style={{ marginBottom: 5 }}>
                 </select>
             </label><br />
             <input type="submit" value="Save" style={{ marginRight: 5 }}/>
