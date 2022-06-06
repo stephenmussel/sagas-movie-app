@@ -14,6 +14,24 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
+    // return (
+    //     <main>
+    //         <div>
+    //             <button onClick={() => history.push('/add-movie')}>Add Movie</button>
+    //         </div>
+    //         {/* <h1>MovieList</h1> */}
+    //         <section className="movies">
+    //             {movies.map(movie => {
+    //                 return (
+    //                     <div key={movie.id} >
+    //                         <MovieItem movie={movie} />
+    //                     </div>
+    //                 );
+    //             })}
+    //         </section>
+    //     </main>
+    // );
+
     return (
         <main>
             <div>
@@ -23,7 +41,7 @@ function MovieList() {
             <section className="movies">
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} >
+                        <div key={movie.id}>
                             <MovieItem movie={movie} />
                         </div>
                     );

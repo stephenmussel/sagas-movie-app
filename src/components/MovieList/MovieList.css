@@ -1,4 +1,9 @@
 .movies {
     display : flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin: 100px;
+    gap: 50px;
+    row-gap: 50px;
 }
+
