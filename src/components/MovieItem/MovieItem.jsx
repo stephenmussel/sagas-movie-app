@@ -15,8 +15,11 @@ function MovieItem({ movie }) {
         history.push(`/details/${movie.id}`)
     }
 
-    const deleteMovie = () => {
+    const deleteMovie = (movieId) => {
         console.log('clicked delete');
+        console.log('movie to delete:', movieId);
+
+        dispatch({ type: 'DELETE_MOVIE', payload: movieId })
     } 
 
     return (
@@ -30,7 +33,7 @@ function MovieItem({ movie }) {
                 />
             </div>
             <div>
-                <button onClick={deleteMovie}>Delete</button>
+                <button onClick={() => deleteMovie(movie.id)}>Delete</button>
             </div>
         </div>
     )

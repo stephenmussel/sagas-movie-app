@@ -19,6 +19,18 @@ function* rootSaga() {
     yield takeEvery('FETCH_SELECT_OPTIONS', fetchSelectOptions);
     yield takeEvery('CREATE_MOVIE', createMovie);
     yield takeEvery('UPDATE_MOVIE', updateMovie);
+    yield takeEvery('DELETE_MOVIE', deleteMovie);
+}
+
+function* deleteMovie(action) {
+    try {
+        console.log('deleteMovie saga wired!');
+        
+
+    } catch(err) {
+        console.log('err in deleting movie:', err);
+        
+    }
 }
 
 // Updates selected movie details
@@ -33,8 +45,7 @@ function* updateMovie(action) {
         // yield axios.delete(`/api/genre/${movieUpdates.id}`, movieUpdates);
 
     } catch(err) {
-        console.log('err in updateMovie:', err);
-        
+        console.log('err in updateMovie:', err);    
     }
 }
 
