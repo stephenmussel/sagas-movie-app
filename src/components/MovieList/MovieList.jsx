@@ -16,19 +16,20 @@ function MovieList() {
 
     return (
         <main>
-            <button onClick={() => history.push('/add-movie')}>Add Movie</button>
-            <h1>MovieList</h1>
+            <div>
+                <button onClick={() => history.push('/add-movie')}>Add Movie</button>
+            </div>
+            {/* <h1>MovieList</h1> */}
             <section className="movies">
                 {movies.map(movie => {
                     return (
                         <div key={movie.id} >
-                            <MovieItem movie={movie}/>
+                            <MovieItem movie={movie} />
                         </div>
                     );
                 })}
             </section>
         </main>
-
     );
 }
 
