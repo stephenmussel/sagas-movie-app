@@ -24,6 +24,11 @@ function* rootSaga() {
 function* updateMovie(action) {
     try {
         console.log('updateMovie sage wired!');
+        const movieUpdates = action.payload;
+        console.log('movieUpdates:', movieUpdates);
+        yield axios.put(`/api/movie/details/${movieUpdates.id}`)
+        
+        // TODO: update DB, get new details, and display
         
 
     } catch(err) {
