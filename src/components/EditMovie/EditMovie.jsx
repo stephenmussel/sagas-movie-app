@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function EditMovie() {
 
@@ -13,6 +13,15 @@ function EditMovie() {
         title: "",
         description: ""
     });
+
+    const showCurrentDetails = () => {
+        console.log('in showCurrentDetails');
+    }
+
+    useEffect(() => {
+        console.log('in EditMovie useEffect');
+        showCurrentDetails();
+    }, [])
 
     const handleSubmit = (event) => {
         event.preventDefault();
