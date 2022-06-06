@@ -25,8 +25,12 @@ function* rootSaga() {
 function* deleteMovie(action) {
     try {
         console.log('deleteMovie saga wired!');
-        
+        const deleteId = action.payload;
+        console.log('movie id to delete:', deleteId);
+        yield axios.put(`/api/movie/${deleteId}`);
 
+        yield put({ type: 'FETCH_MOVIES' });
+        
     } catch(err) {
         console.log('err in deleting movie:', err);
         
