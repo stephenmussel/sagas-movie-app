@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function MovieItem({ movie }) {
-    
+
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -14,15 +14,24 @@ function MovieItem({ movie }) {
         dispatch({ type: 'FETCH_GENRES', payload: movie.id })
         history.push(`/details/${movie.id}`)
     }
-    
+
+    const deleteMovie = () => {
+        console.log('clicked delete');
+    } 
+
     return (
         <div>
-            <h3>{movie.title}</h3>
-            <img 
-                src={movie.poster} 
-                alt={movie.title} 
-                onClick={showDetails}
-            />
+            <div>
+                <h3>{movie.title}</h3>
+                <img
+                    src={movie.poster}
+                    alt={movie.title}
+                    onClick={showDetails}
+                />
+            </div>
+            <div>
+                <button onClick={deleteMovie}>Delete</button>
+            </div>
         </div>
     )
 }
