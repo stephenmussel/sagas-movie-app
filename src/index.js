@@ -21,15 +21,13 @@ function* rootSaga() {
     yield takeEvery('UPDATE_MOVIE', updateMovie);
 }
 
+// Updates selected movie details
 function* updateMovie(action) {
     try {
         console.log('updateMovie sage wired!');
         const movieUpdates = action.payload;
         console.log('movieUpdates:', movieUpdates);
-        yield axios.put(`/api/movie/details/${movieUpdates.id}`, movieUpdates)
-        
-        // TODO: update DB, get new details, and display
-        
+        yield axios.put(`/api/movie/details/${movieUpdates.id}`, movieUpdates)        
 
     } catch(err) {
         console.log('err in updateMovie:', err);
@@ -37,6 +35,7 @@ function* updateMovie(action) {
     }
 }
 
+// Creates new movie
 function* createMovie(action) {
     try {
         console.log('createMovie saga wired!');
@@ -52,6 +51,7 @@ function* createMovie(action) {
     }
 }
 
+// GETs genres from server and populates select options in AddMovieForm
 function* fetchSelectOptions(action) {
     try {
         console.log('fetchSelectOptions wired!');
@@ -67,12 +67,13 @@ function* fetchSelectOptions(action) {
     }
 }
 
+// GETs genres of selected movies
 function* fetchGenres(action) {
     try {
         console.log('fetchGenres saga wired!');
         const movieId = action.payload;
         console.log('movieId:', movieId);
-        const genres = yield axios.get(`/api/genre/${movieId}`); // GETs genres of selected movie
+        const genres = yield axios.get(`/api/genre/${movieId}`);
         console.log('movieGenre:', genres.data);
 
         // sends genres to genres reducer

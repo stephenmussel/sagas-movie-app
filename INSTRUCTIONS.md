@@ -1,109 +1,109 @@
-# React-Redux with Redux-Sagas
+<!-- 
+![MIT LICENSE](https://img.shields.io/github/license/scottbromander/the_marketplace.svg?style=flat-square)
+![REPO SIZE](https://img.shields.io/github/repo-size/scottbromander/the_marketplace.svg?style=flat-square)
+![TOP_LANGUAGE](https://img.shields.io/github/languages/top/scottbromander/the_marketplace.svg?style=flat-square)
+![FORKS](https://img.shields.io/github/forks/scottbromander/the_marketplace.svg?style=social)
+-->
 
-## Add the Detail View to our Movie App
+# SAGAS MOVIE APP
 
-For this weekend challenge you'll be expanding on a movie management application! We're already able to see movies that exist in our DB. We'll need to be able to see detailed view for each individual movie, including all genres associated with that movie. This is a very common pattern, to go from a list to showing more information about a single item. 
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#description">Description</a></li>
+    <li>
+      <a href="#preview">Preview</a></li>
+      <ul>
+        <li>
+            <a href="#prerequisites">Prerequisites</a></li>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#updates">Updates</a></li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#acknowledgement">Acknowledgment</a></li>
+    <li><a href="#support">Support</a></li>
+  </ol>
+</details>
+<br />
+
+<!-- Description -->
+## Description
+
+_Duration: 2 Day Sprint_
+
+Expanding on a movie management application! We're already able to see movies that exist in our DB. We'll need to be able to see detailed view for each individual movie, including all genres associated with that movie. This is a very common pattern, to go from a list to showing more information about a single item. 
+
+Your project description goes here. What problem did you solve? How did you solve it? 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam at massa in faucibus. Etiam volutpat, risus non mollis convallis, velit nisi pulvinar mi, eu faucibus orci nisi eget nibh. Integer a velit pretium, volutpat arcu eleifend, fringilla elit. Cras erat sapien, convallis venenatis tellus vitae, feugiat dictum felis.
+
+Suspendisse euismod volutpat aliquet. Maecenas vulputate mauris in pellentesque facilisis. Phasellus varius malesuada semper. Cras sollicitudin diam mollis maximus aliquam.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- Preview -->
+## Preview  
+<br />
+
+<!-- [Giphy API]() -->
+<br /> 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- Prerequisites -->
+### Prerequisites
+
+- [Node.js](https://nodejs.org/en/)
+- [PostgreSQL](http://postgresql.org)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- Setup -->
+## Setup
 
 ## Database Setup
 
 1. Create a database named `saga-movies-app`
-2. Run the queries from `database.sql` on the `saga-movies-app` database
+2. The queries in the `database.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on Postgres, so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries,
+3. Open up your editor of choice and run an `npm install`
+4. Run `npm run server` in your terminal
+5. Run `npm run client` in your terminal
+6. The `npm run client` command will open up a new browser tab for you! If it doesn't, enter: `localhost:3000` in a new tab.
 
-## Install Dependencies
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-1. `npm install`
-2. `npm run server`
-3. `npm run client`
+<!-- Features -->
+## Features
 
-## Notes
+1. Home page displays all of the movies in the movie database. 
+2. Details page shows all details for the selected movie, including title, poster, description, and genres.
+3. Add movie form allows you to `Save` title, url (poster), description, and genre to database or `Cancel`.
+4. Details page shows all details even after page refresh.
+5. Edit details page allows user to update title and description of selected movie and `Save` to the database or `Cancel`.
 
-### Table Relationships
-Genres can be applied to many different movies. Movies can have multiple genres. This is Many-to-Many! Junction Table time!
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-We've given you the database complete with a junction table and data for `movies_genres`.
+<!-- Usage -->
+## Usage
+How does someone use this application? Tell a user story here.
+
+1. xxx
+2. xxx
+3. xxx
+4. xxx
+5. xxx
+6. xxx  
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- Updates -->
+## Updates
  
-### Movie Poster Images
-We've added some movie posters in the `public/images` folder, and the database is set up to use them. If you want your own posters, you'll want to add the files there!
-
----
-
-## Feature List
-
-> NOTE: Start by taking inventory of the existing code. Part of the work for setting up sagas has been done for you.
-
-### Home / List Page
-
-This view is completed already! It displays all of the movies in the movie database. 
-
-- TODO: When a movie poster is clicked, a user should be brought to the `/details` view for that movie.
-
-### Details Page
-
-This should show all details **including ALL genres** for the selected movie, including title, description, and the image, too! Use Sagas and Redux to handle these requests and data.
-
-- TODO: The details page should have a `Back to List` button, which should bring the user to the Home/List Page
-
-> Base functionality does not require the movie details to load correctly after refresh of the browser.
-
-
- > Hint : You can make a GET request for a specific movie. Remember `req.params` and `:id`?
----
-
-### General Considerations
-
-As one of your last projects, it's possible you will be sharing this with employers, so be sure to follow best practices and make it look good!
-
-- [ ] Invest some time in styling it up!
-    - [ ] Research cards for your movie posters on the list page
-    - [ ] Research grids for your movie posters on the Movie List page
-- [ ] Commit your code frequently! You should have at 15+ commits on a project of this size. Use branches to help break down your features.
-- [ ] Comment your code.
-- [ ] Update this README to include a description of the project in your own words.
-
----
-
-## Development Stretch Goals
-
-### 1. Add Movie Form
-
-This should show:
-
-- an input field (for the movie title)
-- an input field (for the movie poster image URL))
-- a textarea (for the movie description)
-- a dropdown (for the genres)
-
-The Add Movie page should have the buttons:
-
-- `Cancel` button, which should bring the user to the Home/List Page
-- `Save` button, which should save these inputs in the database and bring the user to the Home/List Page (which now has the new movie)
-
-**Base functionality does not require being able to select more than one genre for a new movie**
-
-> Hint: Look at the /api/movie POST route -- it's been made already but is performing 2 queries: one to store the movie information and another to store the genre in the junction table.
-
-> Hint: You'll want to use the genres that are in the db for your dropdown
-
-
-### 2. Refresh on Details Page
-Allow the app to maintain on refresh our details page.
-Research [React Router URL PARAMS](https://reactrouter.com/web/example/url-params) 
-
-### 3. Edit Page (Stretch)
-Add to the detail page an edit button that brings the user to the edit page.
-
-This new page should show:
-
-- an input field (for changing the movie title), for the selected movie.
-- a textarea (for changing the movie description)
-
-The edit page should have the buttons:
-
-- `Cancel` button, which should bring the user to the Details Page
-- `Save` button, which should update the title and description in the database and bring the user to the Details Page
-
-### Other Ideas
-
+- [ ] Material-UI
 - [ ] Display the current values in the input (title) and textarea (description) on the Edit Page
 - [ ] Display all genres on movie list page. Research [array_agg](https://stackoverflow.com/questions/43458174/how-to-save-and-return-javascript-object-with-subarray-in-normalized-sql) to make this possible.
 - [ ] Move sagas and reducers out of your `index.js` and into separate files (ideally in `src/redux/reducers` and `src/redux/sagas` folders).
@@ -111,4 +111,38 @@ The edit page should have the buttons:
 - [ ] Allow the user to add a genre to a movie.
 - [ ] Allow the user to remove a genre from a movie.
 - [ ] Only display the top 10 movies, and allow the user to search for movie titles with a search bar on the home page (you can do this on the client side or the server side, server side is a bigger stretch, but good practice).
+- [ ] Update readme
 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- Built With -->
+## Built With
+
+* [React.js](https://reactjs.org/)
+* [Redux.js](https://redux.js.org/)
+* [Redux-Saga](https://redux-saga.js.org/)
+* [Axios](http://npmjs.com/package/axios)
+* [Material-UI](https://mui.com/)
+* HTML5
+* CSS3
+* [Express.js](http://expressjs.com)
+* [Node.js](https://nodejs.org/en)
+* [PostgreSQL](http://postgresql.org)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- Acknowledgement -->
+## Acknowledgement
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. Thank you to my wife and our dog Laurel for their continued support and patience.  
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- Support -->
+## Support
+If you have suggestions or issues, please contact me at:  
+
+[LinkedIn](https://www.linkedin.com/in/phaydara-vongsavanthong/)  
+[GitHub](https://github.com/stephenmussel)  
+
+<p align="right">(<a href="#top">back to top</a>)</p>

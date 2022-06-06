@@ -49,6 +49,3 @@ function EditMovie() {
 }
 
 export default EditMovie;
-
-// TODO: `Save` button, which should update the title and description in the database 
-// TODO: ...and bring the user to the Details Page
