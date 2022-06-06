@@ -32,6 +32,28 @@ router.get('/details/:id', (req, res) => {
     });
 });
 
+// Updates details of selected movie
+router.put('/details/:id', (req, res) => {
+const detailsUpdate = req.body;
+console.log('detailsUpdate:', detailsUpdate);
+const detailsId = req.params.id;
+console.log('detailsId:', detailsId);
+
+const queryText = `
+  UPDATE movies 
+  SET title = $1,
+    description = $2
+  WHERE id = $3;`;
+  pool.query(queryText, [detailsUpdate.title, detailsUpdate.description, detailsId])
+    .then(results => {
+      res.sendStatus(200)
+    })
+    .catch(err => {
+      console.log('err in updating details', err);
+      res.sendStatus(500);
+    });
+});
+
 router.post('/', (req, res) => {
   console.log(req.body);
   // RETURNING "id" will give us back the id of the created movie
