@@ -95,10 +95,12 @@ router.delete('/:id', (req, res) => {
   const deleteId = req.params.id;
   console.log('deleteId:', deleteId);
 
+  // deletes movie_id from junction table first because of foreign key
   const queryText = `DELETE FROM movies_genres WHERE movie_id = $1;`;
   pool.query(queryText, [deleteId])
     .then(result => {
       
+      // THEN delete from movies table
       const newQuery = `DELETE FROM movies WHERE id = $1;`;
       pool.query(newQuery, [deleteId])
       res.sendStatus(204);

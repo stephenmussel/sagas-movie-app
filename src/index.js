@@ -29,11 +29,11 @@ function* deleteMovie(action) {
         console.log('movie id to delete:', deleteId);
         yield axios.delete(`/api/movie/${deleteId}`);
 
+        // GETs updates list
         yield put({ type: 'FETCH_MOVIES' });
         
     } catch(err) {
-        console.log('err deleting movie:', err);
-        
+        console.log('err deleting movie:', err);  
     }
 }
 
