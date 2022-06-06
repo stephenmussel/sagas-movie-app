@@ -35,6 +35,7 @@ function EditMovie() {
     useEffect(() => {
         showCurrentDetails();
         // dispatch({ type: 'FETCH_DETAILS'}); // GETs updated details after edits saved
+        dispatch({ type: 'FETCH_SELECT_OPTIONS' });
     }, [])
 
     // const handleSubmit = (event) => {
@@ -102,11 +103,18 @@ function EditMovie() {
                     // defaultValue={details.description}
                     onChange={(event) => setDescription(event.target.value)}
                 /><br />
-                <p><b>Genres: </b>
-                    {genres.map(each => (
-                        <p key={each.id}>{each.name}</p>
+                <div><b>Genres: </b>
+                    {genres.map((each, i) => (
+                        <p key={i}>{each.name}</p>
                     ))}
-                </p>
+                </div>
+                {/* {JSON.stringify(select)} */}
+                <select style={{ marginBottom: 10 }}>
+                    <option>Remove A Genre</option>
+                    {select.map(each => (
+                        <option key={each.id}>{each.name}</option>
+                    ))}
+                </select><br />
                 <input type="submit" value="Save" style={{ marginRight: 5 }} />
                 <button onClick={() => history.push(`/details/${details.id}`)}>Cancel</button>
             </form>
