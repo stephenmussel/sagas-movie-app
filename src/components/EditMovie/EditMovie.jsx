@@ -32,7 +32,7 @@ function EditMovie() {
 
     useEffect(() => {
         showCurrentDetails();
-        dispatch({ type: 'FETCH_DETAILS'}); // GETs updated details after edits saved
+        // dispatch({ type: 'FETCH_DETAILS'}); // GETs updated details after edits saved
     }, [])
 
     // const handleSubmit = (event) => {
