@@ -110,3 +110,4 @@ function EditMovie() {
 export default EditMovie;
 
 // REVIEW: using value vs defaultValue?
+// TODO: remove genre
