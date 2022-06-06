@@ -6,7 +6,7 @@ function AddMovieForm() {
 
     const history = useHistory();
     const dispatch = useDispatch();
-    const genres = useSelector(store => store.genres);
+    const select = useSelector(store => store.select);
 
     const [newMovie, setNewMovie] = useState({
         title: "",
@@ -64,7 +64,7 @@ function AddMovieForm() {
                     style={{ marginBottom: 5 }}
                 >
                     <option>Select A Genre</option>
-                    {genres.map(each => (
+                    {select.map(each => (
                         <option
                             key={each.id}
                             value={each.id}

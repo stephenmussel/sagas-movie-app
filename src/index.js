@@ -60,7 +60,7 @@ function* fetchSelectOptions(action) {
         console.log('genres:', genres.data);
 
         // sends all genres select options to reducer
-        yield put({ type: 'SET_GENRES', payload: genres.data});
+        yield put({ type: 'SET_SELECT_GENRES', payload: genres.data});
         
     } catch(err) {
         console.log('err in fetchSelect');
@@ -116,6 +116,16 @@ function* fetchAllMovies() {
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 
+// stores select genre options
+const select = (state = [], action) => {
+    switch(action.type) {
+        case 'SET_SELECT_GENRES':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
 // stores genres of selected movie
 const genres = (state = [], action) => {
     switch(action.type) {
@@ -152,6 +162,7 @@ const storeInstance = createStore(
         movies,
         details,
         genres,
+        select,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
