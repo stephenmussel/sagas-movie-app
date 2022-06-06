@@ -27,7 +27,10 @@ function* updateMovie(action) {
         console.log('updateMovie sage wired!');
         const movieUpdates = action.payload;
         console.log('movieUpdates:', movieUpdates);
-        yield axios.put(`/api/movie/details/${movieUpdates.id}`, movieUpdates)        
+        yield axios.put(`/api/movie/details/${movieUpdates.id}`, movieUpdates);
+        
+        // TODO: remove genre
+        // yield axios.delete(`/api/genre/${movieUpdates.id}`, movieUpdates);
 
     } catch(err) {
         console.log('err in updateMovie:', err);

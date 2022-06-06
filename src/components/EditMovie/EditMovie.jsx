@@ -109,9 +109,11 @@ function EditMovie() {
                     ))}
                 </div>
                 {/* {JSON.stringify(select)} */}
+
+                {/* TODO: remove genre */}
                 <select style={{ marginBottom: 10 }}>
                     <option>Remove A Genre</option>
-                    {select.map(each => (
+                    {genres.map(each => (
                         <option key={each.id}>{each.name}</option>
                     ))}
                 </select><br />
