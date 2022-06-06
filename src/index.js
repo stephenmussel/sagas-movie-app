@@ -27,12 +27,12 @@ function* deleteMovie(action) {
         console.log('deleteMovie saga wired!');
         const deleteId = action.payload;
         console.log('movie id to delete:', deleteId);
-        yield axios.put(`/api/movie/${deleteId}`);
+        yield axios.delete(`/api/movie/${deleteId}`);
 
         yield put({ type: 'FETCH_MOVIES' });
         
     } catch(err) {
-        console.log('err in deleting movie:', err);
+        console.log('err deleting movie:', err);
         
     }
 }

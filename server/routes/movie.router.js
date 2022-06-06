@@ -90,4 +90,23 @@ router.post('/', (req, res) => {
   })
 })
 
+// DELETEs movie
+router.delete('/:id', (req, res) => {
+  const deleteId = req.params.id;
+  console.log('deleteId:', deleteId);
+
+  const queryText = `DELETE FROM movies_genres WHERE movie_id = $1;`;
+  pool.query(queryText, [deleteId])
+    .then(result => {
+      
+      const newQuery = `DELETE FROM movies WHERE id = $1;`;
+      pool.query(newQuery, [deleteId])
+      res.sendStatus(204);
+    })
+    .catch(err => {
+      console.log('err in deleting movie:', err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;
