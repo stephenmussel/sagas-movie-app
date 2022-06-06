@@ -20,6 +20,7 @@ function EditMovie() {
         console.log('movieEdits:', movieEdits);
 
         dispatch({ type: 'UPDATE_MOVIE', payload: movieEdits});
+        history.push(`/details/${movieEdits.id}`)
     }
 
     return (
