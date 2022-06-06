@@ -4,7 +4,9 @@ import { useState, useEffect } from 'react';
 
 function EditMovie() {
 
-    const details = useSelector(store => store.details)
+    const details = useSelector(store => store.details);
+    const genres = useSelector(store => store.genres);
+    const select = useSelector(store => store.select);
     const history = useHistory();
     const dispatch = useDispatch();
 
@@ -100,6 +102,11 @@ function EditMovie() {
                     // defaultValue={details.description}
                     onChange={(event) => setDescription(event.target.value)}
                 /><br />
+                <p><b>Genres: </b>
+                    {genres.map(each => (
+                        <p key={each.id}>{each.name}</p>
+                    ))}
+                </p>
                 <input type="submit" value="Save" style={{ marginRight: 5 }} />
                 <button onClick={() => history.push(`/details/${details.id}`)}>Cancel</button>
             </form>
