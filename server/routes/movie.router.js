@@ -41,8 +41,7 @@ console.log('detailsId:', detailsId);
 
 const queryText = `
   UPDATE movies 
-  SET title = $1,
-    description = $2
+  SET title = $1, description = $2
   WHERE id = $3;`;
   pool.query(queryText, [detailsUpdate.title, detailsUpdate.description, detailsId])
     .then(results => {
