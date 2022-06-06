@@ -18,7 +18,18 @@ function* rootSaga() {
     yield takeEvery('FETCH_GENRES', fetchGenres);
     yield takeEvery('FETCH_SELECT_OPTIONS', fetchSelectOptions);
     yield takeEvery('CREATE_MOVIE', createMovie);
-    
+    yield takeEvery('UPDATE_MOVIE', updateMovie);
+}
+
+function* updateMovie(action) {
+    try {
+        console.log('updateMovie sage wired!');
+        
+
+    } catch(err) {
+        console.log('err in updateMovie:', err);
+        
+    }
 }
 
 function* createMovie(action) {
