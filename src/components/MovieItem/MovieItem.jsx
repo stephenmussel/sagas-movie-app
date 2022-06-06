@@ -8,6 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions, IconButton } from '@mui/material';
 import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
+import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
 
 function MovieItem({ movie }) {
 
@@ -58,16 +59,27 @@ function MovieItem({ movie }) {
                 />
             </CardActionArea>
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                >
                     {movie.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    genres could go here?
+                <Typography
+                    variant="body2"
+                    color="text.secondary"
+                >
+                    genres go here...
                 </Typography>
             </CardContent>
-            <CardActionArea>
-                <HighlightOffRoundedIcon onClick={() => deleteMovie(movie.id)}>Delete</HighlightOffRoundedIcon>
-            </CardActionArea>
+            <IconButton
+                onClick={() => deleteMovie(movie.id)}
+                style={{ marginBottom: 5 }}
+            >
+                <HighlightOffRoundedIcon>Delete</HighlightOffRoundedIcon>
+                {/* <ClearRoundedIcon>Delete</ClearRoundedIcon> */}
+            </IconButton>
         </Card>
     )
 }
