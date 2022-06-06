@@ -17,7 +17,8 @@ function* rootSaga() {
     yield takeEvery('FETCH_DETAILS', fetchDetails);
     yield takeEvery('FETCH_GENRES', fetchGenres);
     yield takeEvery('FETCH_SELECT_OPTIONS', fetchSelectOptions);
-    yield takeEvery('CREATE_MOVIE', createMovie)
+    yield takeEvery('CREATE_MOVIE', createMovie);
+    
 }
 
 function* createMovie(action) {

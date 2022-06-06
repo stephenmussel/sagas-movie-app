@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -6,8 +6,10 @@ function EditMovie() {
 
     const details = useSelector(store => store.details)
     const history = useHistory();
+    const dispatch = useDispatch();
     
     const [movieEdits, setMovieEdits] = useState({
+        id: details.id,
         title: "",
         description: ""
     });
@@ -16,6 +18,8 @@ function EditMovie() {
         event.preventDefault();
         console.log('clicked save!');
         console.log('movieEdits:', movieEdits);
+
+        dispatch({ type: 'UPDATE_MOVIE', payload: movieEdits});
     }
 
     return (
@@ -45,16 +49,6 @@ function EditMovie() {
 
 export default EditMovie;
 
-// TODO:
-
-/**
-
-Edit page should show:
-
-- an input field (for changing the movie title), for the selected movie.
-- a textarea (for changing the movie description)
-
-The edit page should have the buttons:
-
-- `Save` button, which should update the title and description in the database and bring the user to the Details Page
- */
+// NOTES: movieToEdit id
+// TODO: `Save` button, which should update the title and description in the database 
+// TODO: ...and bring the user to the Details Page
