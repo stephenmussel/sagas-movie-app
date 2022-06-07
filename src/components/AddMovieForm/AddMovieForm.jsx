@@ -75,7 +75,7 @@ function AddMovieForm() {
                 </select>
             </label><br />
             <input type="submit" value="Save" style={{ marginRight: 5 }} />
-            <button onClick={() => history.push('/')}>Cancel</button>
+            {/* <button onClick={() => history.push('/')}>Cancel</button> */}
         </form>
     )
 }
