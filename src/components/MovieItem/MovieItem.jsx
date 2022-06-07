@@ -56,6 +56,7 @@ function MovieItem({ movie }) {
                     image={movie.poster}
                     alt={movie.title}
                     onClick={showDetails}
+                    className="poster"
                 />
             </CardActionArea>
             <CardContent>

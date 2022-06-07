@@ -1,9 +1,14 @@
 .movies {
     display : flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: center;
     margin: 100px;
     gap: 25px;
-    row-gap: 50px;
+    row-gap: 25px;
 }
 
+.button-container {
+    position: absolute;
+    top: 150 px;
+    z-index: 2;
+}
