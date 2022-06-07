@@ -1,0 +1,9 @@
+.details-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.details-container .description {
+    flex: 1;
+    /* padding: 10px; */
+}
