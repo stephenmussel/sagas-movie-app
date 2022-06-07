@@ -14,7 +14,7 @@ const style = {
     transform: 'translate(-50%, -50%)',
     width: 400,
     bgcolor: 'background.paper',
-    border: '2px solid #000',
+    // border: '1px solid #000',
     boxShadow: 24,
     pt: 2,
     px: 4,
@@ -72,10 +72,10 @@ function AddMovieButton() {
                 >
                     <Box sx={{ ...style, width: 400 }}>
                         <h2 id="child-modal-title">Add Movie</h2>
-                        <AddMovieForm />
-                        <p id="child-modal-description">
+                        {/* <p id="child-modal-description">
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        </p>
+                        </p> */}
+                        <AddMovieForm />
                         <Button onClick={handleClose}>Cancel</Button>
                     </Box>
                 </Modal>
