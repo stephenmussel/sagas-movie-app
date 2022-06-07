@@ -8,9 +8,16 @@ function AddMovieButton() {
     const history = useHistory();
 
     return (
-        <Stack direction="row" spacing={2}>
+        <Stack spacing={2}>
             <Button 
                 onClick={() => history.push('/add-movie')} 
+                sx={{ 
+                    borderRadius: 0, 
+                    backgroundColor: '#42a5f5',
+                    ':hover': {
+                        bgcolor:'primary.main',
+                    }
+                }}
                 variant="contained" 
                 startIcon={<AddIcon />}
             >
