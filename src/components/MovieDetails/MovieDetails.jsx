@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
+import './MovieDetails.css';
 
 function MovieDetails() {
 
@@ -18,7 +19,7 @@ function MovieDetails() {
         console.log('in details useEffect!');
 
         // fetches details based on movieId passed!
-        dispatch({ type: 'FETCH_DETAILS', payload: {id: movieId}});
+        dispatch({ type: 'FETCH_DETAILS', payload: { id: movieId } });
     }, [])
 
     const updateMovie = (detailsId) => {
@@ -29,24 +30,32 @@ function MovieDetails() {
     }
 
     return (
-        <div>
-            <h3>{details.title}</h3>
-            {/* {JSON.stringify(details)} */}
-            <img
-                src={details.poster}
-                alt={details.title}
-            />
-            <p>{details.description}</p>
+        <div className="details-container">
+            <div className="title-poster">
+                <h3>{details.title}</h3>
+                <img
+                    src={details.poster}
+                    alt={details.title}
+                />
+            </div>
+            <div className="description">
+                <p>{details.description}</p>
+            </div>
             <div>
                 <p><b>Genre</b></p>
-                <div>
+                <>
                     {genres.map((each, i) => (
                         <p key={i}>{each.name}</p>
                     ))}
-                </div>
+                </>
             </div>
-            <button onClick={() => history.push('/')} style={{ marginRight: 5 }}>Back To List</button>
-            <button onClick={() => updateMovie(details.id)}>Edit</button>
+
+            <div className="back-btn">
+                <button onClick={() => history.push('/')} style={{ marginRight: 5 }}>Back To List</button>
+            </div>
+            <div className="edit-btn">
+                <button onClick={() => updateMovie(details.id)}>Edit</button>
+            </div>
         </div>
     )
 }
