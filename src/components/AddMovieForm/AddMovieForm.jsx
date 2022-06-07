@@ -89,6 +89,7 @@ function AddMovieForm() {
         <form onSubmit={handleSubmit}>
             {/* <h1>Add Movie</h1> */}
             <TextField
+                required
                 id="outlined"
                 label="Title"
                 variant="outlined"
@@ -97,6 +98,7 @@ function AddMovieForm() {
                 onChange={(event) => setNewMovie({ ...newMovie, title: event.target.value })}
             /><br />
             <TextField
+                required
                 id="outlined"
                 label="URL"
                 variant="outlined"
@@ -105,6 +107,7 @@ function AddMovieForm() {
                 onChange={(event) => setNewMovie({ ...newMovie, poster: event.target.value })}
             /><br />
             <TextField
+                required
                 id="outlined-textarea"
                 label="Description"
                 variant="outlined"
@@ -116,6 +119,7 @@ function AddMovieForm() {
             <InputLabel id="demo-simple-select-label"></InputLabel>
             <FormControl>
                 <Select
+                    required
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     // label="Select Genre"

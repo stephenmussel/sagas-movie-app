@@ -1,6 +1,6 @@
 #header {
   background-color: #1565c0;
-  min-height: 150px;
+  min-height: 200px;
   position: sticky;
   top: 0;
   z-index: 2;
@@ -8,6 +8,13 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+}
+
+#header {
+  background-image: url("background-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
 }
 
   h1 {
