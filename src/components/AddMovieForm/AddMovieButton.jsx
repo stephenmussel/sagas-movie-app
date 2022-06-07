@@ -52,9 +52,9 @@ function AddMovieButton() {
                 onClick={handleOpen}
                 sx={{
                     borderRadius: 0,
-                    backgroundColor: 'primary.dark',
+                    backgroundColor: 'primary.light',
                     ':hover': {
-                        bgcolor: 'primary.light',
+                        bgcolor: 'primary.dark',
                     }
                 }}
                 variant="contained"
