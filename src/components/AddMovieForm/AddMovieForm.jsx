@@ -8,7 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-function AddMovieForm() {
+function AddMovieForm({ handleClose }) {
 
     const history = useHistory();
     const dispatch = useDispatch();
@@ -37,7 +37,8 @@ function AddMovieForm() {
         console.log('newMovie:', newMovie);
 
         dispatch({ type: 'CREATE_MOVIE', payload: newMovie });
-        history.push('/');
+        // history.push('/');
+        handleClose();
     }
 
     // return (
@@ -93,7 +94,8 @@ function AddMovieForm() {
                 id="outlined"
                 label="Title"
                 variant="outlined"
-                style={{ marginBottom: 10, width: 400 }}
+                style={{ marginBottom: 10 }}
+                fullWidth
                 value={newMovie.title}
                 onChange={(event) => setNewMovie({ ...newMovie, title: event.target.value })}
             /><br />
@@ -102,7 +104,8 @@ function AddMovieForm() {
                 id="outlined"
                 label="URL"
                 variant="outlined"
-                style={{ marginBottom: 10, width: 400 }}
+                style={{ marginBottom: 10 }}
+                fullWidth
                 value={newMovie.poster}
                 onChange={(event) => setNewMovie({ ...newMovie, poster: event.target.value })}
             /><br />
@@ -112,7 +115,8 @@ function AddMovieForm() {
                 label="Description"
                 variant="outlined"
                 multiline
-                style={{ marginBottom: 10, width: 400 }}
+                fullWidth
+                style={{ marginBottom: 10 }}
                 value={newMovie.description}
                 onChange={(event) => setNewMovie({ ...newMovie, description: event.target.value })}
             /><br />
@@ -125,7 +129,8 @@ function AddMovieForm() {
                     // label="Select Genre"
                     onChange={(event) => setNewMovie({ ...newMovie, genre_id: event.target.value })}
                     style={{ marginBottom: 5 }}
-                    sx={{ width: 400 }}
+                    sx={{ width: 200 }}
+                    fullWidth
                 >
                     <MenuItem><b>Select A Genre</b></MenuItem>
                     {select.map(each => (
@@ -141,6 +146,8 @@ function AddMovieForm() {
             <br />
             <Button type="submit" value="Save" style={{ marginRight: 5 }}>Save</Button>
             {/* <button onClick={() => history.push('/')}>Cancel</button> */}
+            <Button onClick={handleClose}>Cancel</Button>
+
         </form>
     )
 }

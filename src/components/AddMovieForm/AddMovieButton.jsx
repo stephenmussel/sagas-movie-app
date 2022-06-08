@@ -75,8 +75,8 @@ function AddMovieButton() {
                         {/* <p id="child-modal-description">
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                         </p> */}
-                        <AddMovieForm />
-                        <Button onClick={handleClose}>Cancel</Button>
+                        <AddMovieForm handleClose={handleClose}/>
+                        {/* <Button onClick={handleClose}>Cancel</Button> */}
                     </Box>
                 </Modal>
             </Fragment>
