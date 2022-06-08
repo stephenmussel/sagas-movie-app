@@ -49,6 +49,12 @@ Suspendisse euismod volutpat aliquet. Maecenas vulputate mauris in pellentesque 
 ## Preview  
 <br />
 
+![Home](/public/images/home-view.jpg)
+<br /><br />
+
+![Add Movie](/public/images/add-movie-view.jpg)
+<br />
+
 <!-- [Giphy API]() -->
 <br /> 
 
