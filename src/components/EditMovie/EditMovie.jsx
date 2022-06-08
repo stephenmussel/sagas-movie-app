@@ -2,6 +2,13 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+import { TextField } from '@mui/material';
+import Button from '@mui/material/Button';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
 function EditMovie() {
 
     const details = useSelector(store => store.details);
@@ -87,38 +94,45 @@ function EditMovie() {
             <h1>Edit: <em>{details.title}</em></h1>
             {/* <p>title: {title}</p> */}
             <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Title"
-                    style={{ marginBottom: 5 }}
+                <TextField
+                    required
+                    id="outlined"
+                    label="Title"
+                    variant="outlined"
+                    // fullWidth
+                    style={{ marginBottom: 10 }}
                     value={title}
                     // defaultValue={details.title}
                     onChange={(event) => setTitle(event.target.value)}
                 /><br />
-                <textarea
-                    type="text"
-                    placeholder="Description"
-                    style={{ marginBottom: 5 }}
+                <TextField
+                    required
+                    id="outlined-textarea"
+                    label="Description"
+                    variant="outlined"
+                    multiline
+                    // fullWidth
+                    style={{ marginBottom: 10 }}
                     value={description}
                     // defaultValue={details.description}
                     onChange={(event) => setDescription(event.target.value)}
                 /><br />
-                <div><b>Genres: </b>
+                {/* TODO: remove genre */}
+                {/* <div><b>Genres: </b>
                     {genres.map((each, i) => (
                         <p key={i}>{each.name}</p>
                     ))}
-                </div>
-                {/* {JSON.stringify(select)} */}
-
-                {/* TODO: remove genre */}
-                <select style={{ marginBottom: 10 }}>
+                </div> */}
+                {/* {JSON.stringify(select)} */}                
+                {/* <select style={{ marginBottom: 10 }}>
                     <option>Remove A Genre</option>
                     {genres.map(each => (
                         <option key={each.id}>{each.name}</option>
                     ))}
-                </select><br />
-                <input type="submit" value="Save" style={{ marginRight: 5 }} />
-                <button onClick={() => history.push(`/details/${details.id}`)}>Cancel</button>
+                </select><br /> */}
+                {/* <input type="submit" value="Save" style={{ marginRight: 5 }} /> */}
+                <Button type="submit" value="Save" style={{ marginRight: 5 }}>Save</Button>
+                <Button onClick={() => history.push(`/details/${details.id}`)}>Cancel</Button>
             </form>
         </div>
     )
