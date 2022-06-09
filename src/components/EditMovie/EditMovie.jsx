@@ -100,7 +100,7 @@ function EditMovie() {
                     id="outlined"
                     label="Title"
                     variant="outlined"
-                    // fullWidth
+                    fullWidth
                     style={{ marginBottom: 10 }}
                     value={title}
                     // defaultValue={details.title}
@@ -112,7 +112,7 @@ function EditMovie() {
                     label="Description"
                     variant="outlined"
                     multiline
-                    // fullWidth
+                    fullWidth
                     style={{ marginBottom: 10 }}
                     value={description}
                     // defaultValue={details.description}
