@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import { TextField, Box } from '@mui/material';
@@ -17,6 +17,8 @@ function EditMovie({ handleClose }) {
     const select = useSelector(store => store.select);
     const history = useHistory();
     const dispatch = useDispatch();
+    const params = useParams();
+    const movieId = params.id;
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -44,6 +46,8 @@ function EditMovie({ handleClose }) {
         showCurrentDetails();
         // dispatch({ type: 'FETCH_DETAILS'}); // GETs updated details after edits saved
         dispatch({ type: 'FETCH_SELECT_OPTIONS' });
+        dispatch({ type: 'FETCH_DETAILS', payload: { id: movieId } });
+
     }, [])
 
     // const handleSubmit = (event) => {
@@ -61,7 +65,8 @@ function EditMovie({ handleClose }) {
         console.log('editedDetails:', editedDetails);
 
         dispatch({ type: 'UPDATE_MOVIE', payload: editedDetails }); // sends updated details to saga
-        history.push(`/details/${details.id}`);
+        // history.push(`/details/${details.id}`);
+        handleClose();
     }
 
     // return (

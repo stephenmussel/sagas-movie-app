@@ -47,6 +47,7 @@ function* updateMovie(action) {
         
         // TODO: remove genre
         // yield axios.delete(`/api/genre/${movieUpdates.id}`, movieUpdates);
+        yield put({ type: 'FETCH_DETAILS', payload: movieUpdates });
 
     } catch(err) {
         console.log('err in updateMovie:', err);    
