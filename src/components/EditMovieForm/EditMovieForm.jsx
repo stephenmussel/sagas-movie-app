@@ -97,7 +97,7 @@ function EditMovie({ handleClose }) {
 
     return (
         <div>
-            <h1>Edit: <em>{details.title}</em></h1>
+            {/* <h1>Edit: <em>{details.title}</em></h1> */}
             {/* <p>title: {title}</p> */}
             <form onSubmit={handleSubmit}>
                 <TextField

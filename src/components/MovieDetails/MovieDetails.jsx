@@ -42,14 +42,14 @@ function MovieDetails() {
             <div className="description">
                 <p>{details.description}</p>
             </div>
-            <div>
+            {/* <div>
                 <p><b>Genre</b></p>
                 <>
                     {genres.map((each, i) => (
                         <p key={i}>{each.name}</p>
                     ))}
                 </>
-            </div>
+            </div> */}
 
             <div className="back-btn">
                 <button onClick={() => history.push('/')} style={{ marginRight: 5 }}>Back To List</button>

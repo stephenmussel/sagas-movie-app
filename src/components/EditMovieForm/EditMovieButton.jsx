@@ -18,7 +18,7 @@ const style = {
     pb: 3,
 };
 
-function EditMovieButton({ details, updateMovie }) {
+function EditMovieButton() {
 
     const [open, setOpen] = useState(false);
     const handleOpen = () => {
@@ -32,33 +32,34 @@ function EditMovieButton({ details, updateMovie }) {
         <div>
             <Button
                 onClick={handleOpen}
-                // sx={{
-                //     borderRadius: 0,
-                //     backgroundColor: 'primary.light',
-                //     ':hover': {
-                //         bgcolor: 'primary.dark',
-                //     }
-                // }}
-                // variant="contained"
-                // startIcon={<AddIcon />}
+            // sx={{
+            //     borderRadius: 0,
+            //     backgroundColor: 'primary.light',
+            //     ':hover': {
+            //         bgcolor: 'primary.dark',
+            //     }
+            // }}
+            // variant="contained"
+            // startIcon={<AddIcon />}
             >
                 Edit
             </Button>
-            <Modal
-                hideBackdrop
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="child-modal-title"
-                aria-describedby="child-modal-description"
-            >
-                <Box sx={{ ...style, width: 400 }}>
-                    <h2 id="child-modal-title">Make Edits</h2>
-                    <EditMovieForm handleClose={handleClose} />
-                    {/* <Button onClick={handleClose}>Cancel</Button> */}
-                </Box>
-            </Modal>
-            {/* <button onClick={() => updateMovie(details.id)}>Edit</button> */}
-
+            <Fragment>
+                <Modal
+                    hideBackdrop
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="child-modal-title"
+                    aria-describedby="child-modal-description"
+                >
+                    <Box sx={{ ...style, width: 400 }}>
+                        <h2 id="child-modal-title">Make Edits</h2>
+                        <EditMovieForm handleClose={handleClose} />
+                        {/* <Button onClick={handleClose}>Cancel</Button> */}
+                    </Box>
+                </Modal>
+                {/* <button onClick={() => updateMovie(details.id)}>Edit</button> */}
+            </Fragment>
         </div>
     )
 }
