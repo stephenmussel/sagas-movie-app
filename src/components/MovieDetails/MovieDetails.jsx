@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import './MovieDetails.css';
-import EditMovieButton from '../EditMovie/EditMovieButton';
+import EditMovieButton from '../EditMovieForm/EditMovieButton';
 
 function MovieDetails() {
 

@@ -3,7 +3,7 @@ import './App.css';
 import MovieList from '../MovieList/MovieList'
 import MovieDetails from '../MovieDetails/MovieDetails';
 import AddMovieForm from '../AddMovieForm/AddMovieForm';
-import EditMovie from '../EditMovie/EditMovie';
+import EditMovieForm from '../EditMovieForm/EditMovieForm';
 import Header from '../Header/Header';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
           <AddMovieForm />
         </Route>
         <Route path="/edit-movie">
-          <EditMovie />
+          <EditMovieForm />
         </Route>
       </Router>
     </div>

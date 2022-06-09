@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
-import EditMovie from './EditMovie';
+import EditMovieForm from './EditMovieForm';
 
 const style = {
     position: 'absolute',
@@ -53,7 +53,7 @@ function EditMovieButton({ details, updateMovie }) {
             >
                 <Box sx={{ ...style, width: 400 }}>
                     <h2 id="child-modal-title">Make Edits</h2>
-                    <EditMovie handleClose={handleClose} />
+                    <EditMovieForm handleClose={handleClose} />
                     {/* <Button onClick={handleClose}>Cancel</Button> */}
                 </Box>
             </Modal>
