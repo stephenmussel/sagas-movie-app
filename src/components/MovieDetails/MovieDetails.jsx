@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import './MovieDetails.css';
+import EditMovieButton from '../EditMovie/EditMovieButton';
 
 function MovieDetails() {
 
@@ -54,7 +55,8 @@ function MovieDetails() {
                 <button onClick={() => history.push('/')} style={{ marginRight: 5 }}>Back To List</button>
             </div>
             <div className="edit-btn">
-                <button onClick={() => updateMovie(details.id)}>Edit</button>
+                {/* <button onClick={() => updateMovie(details.id)}>Edit</button> */}
+                <EditMovieButton details={details.id} updateMovie={updateMovie}/>
             </div>
         </div>
     )
