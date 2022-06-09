@@ -10,7 +10,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-function EditMovie() {
+function EditMovie({ handleClose }) {
 
     const details = useSelector(store => store.details);
     const genres = useSelector(store => store.genres);
@@ -124,7 +124,7 @@ function EditMovie() {
                         <p key={i}>{each.name}</p>
                     ))}
                 </div> */}
-                {/* {JSON.stringify(select)} */}                
+                {/* {JSON.stringify(select)} */}
                 {/* <select style={{ marginBottom: 10 }}>
                     <option>Remove A Genre</option>
                     {genres.map(each => (
@@ -133,7 +133,9 @@ function EditMovie() {
                 </select><br /> */}
                 {/* <input type="submit" value="Save" style={{ marginRight: 5 }} /> */}
                 <Button type="submit" value="Save" style={{ marginRight: 5 }}>Save</Button>
-                <Button onClick={() => history.push(`/details/${details.id}`)}>Cancel</Button>
+                {/* <Button onClick={() => history.push(`/details/${details.id}`)}>Cancel</Button> */}
+                <Button onClick={handleClose}>Cancel</Button>
+
             </form>
         </div>
     )

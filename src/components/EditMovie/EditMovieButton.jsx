@@ -53,8 +53,8 @@ function EditMovieButton({ details, updateMovie }) {
             >
                 <Box sx={{ ...style, width: 400 }}>
                     <h2 id="child-modal-title">Make Edits</h2>
-                    <EditMovie />
-                    <Button onClick={handleClose}>Cancel</Button>
+                    <EditMovie handleClose={handleClose} />
+                    {/* <Button onClick={handleClose}>Cancel</Button> */}
                 </Box>
             </Modal>
             {/* <button onClick={() => updateMovie(details.id)}>Edit</button> */}
