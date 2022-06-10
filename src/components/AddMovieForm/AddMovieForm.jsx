@@ -126,7 +126,7 @@ function AddMovieForm({ handleClose }) {
                     required
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    // label="Select Genre"
+                    label="Select Genre"
                     onChange={(event) => setNewMovie({ ...newMovie, genre_id: event.target.value })}
                     style={{ marginBottom: 5 }}
                     sx={{ width: 200 }}

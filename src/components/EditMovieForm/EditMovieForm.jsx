@@ -137,9 +137,9 @@ function EditMovie({ handleClose }) {
                     ))}
                 </select><br /> */}
                 {/* <input type="submit" value="Save" style={{ marginRight: 5 }} /> */}
-                <Button type="submit" value="Save" style={{ marginRight: 5 }}>Save</Button>
+                <Button type="submit" value="Save" style={{ marginRight: 5 }} variant="contained" color="secondary">Save</Button>
                 {/* <Button onClick={() => history.push(`/details/${details.id}`)}>Cancel</Button> */}
-                <Button onClick={handleClose}>Cancel</Button>
+                <Button onClick={handleClose} variant="contained" color="secondary">Cancel</Button>
 
             </form>
         </div>

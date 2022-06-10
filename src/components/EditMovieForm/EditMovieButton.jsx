@@ -9,7 +9,7 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    width: 750,
     bgcolor: 'background.paper',
     // border: '2px solid #000',
     boxShadow: 24,
@@ -32,15 +32,8 @@ function EditMovieButton() {
         <div>
             <Button
                 onClick={handleOpen}
-            // sx={{
-            //     borderRadius: 0,
-            //     backgroundColor: 'primary.light',
-            //     ':hover': {
-            //         bgcolor: 'primary.dark',
-            //     }
-            // }}
-            // variant="contained"
-            // startIcon={<AddIcon />}
+                variant="contained"
+                color="secondary"
             >
                 Edit
             </Button>
@@ -52,7 +45,7 @@ function EditMovieButton() {
                     aria-labelledby="child-modal-title"
                     aria-describedby="child-modal-description"
                 >
-                    <Box sx={{ ...style, width: 400 }}>
+                    <Box sx={{ ...style, width: 750 }}>
                         <h2 id="child-modal-title">Make Edits</h2>
                         <EditMovieForm handleClose={handleClose} />
                         {/* <Button onClick={handleClose}>Cancel</Button> */}

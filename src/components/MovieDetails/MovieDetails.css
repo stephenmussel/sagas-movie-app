@@ -12,3 +12,29 @@
     border-radius: 25px;
     font-size: small;
 }
+
+.buttons-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.genre-description {
+    margin-left: 20px;
+}
+
+.genre-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.genre-item {
+    margin-right: 5px;
+}

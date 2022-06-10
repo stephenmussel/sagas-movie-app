@@ -7,6 +7,7 @@ import EditMovieButton from '../EditMovieForm/EditMovieButton';
 // Material-UI
 import { Box, TextField } from '@mui/material';
 import Modal from '@mui/material/Modal';
+import Button from '@mui/material/Button';
 
 const style = {
     position: 'absolute',
@@ -64,35 +65,43 @@ function MovieDetails() {
             hideBackdrop
             open={open}
             onClose={handleClose}
-            aria-labelledby="child-modal-title"
-            aria-describedby="child-modal-description"
+            aria-labelledby="parent-modal-title"
+            aria-describedby="parent-modal-description"
         >
             <Box sx={{ ...style, width: 750 }}>
                 <div className="details-container">
                     <div className="title-poster">
-                        <h3>{details.title}</h3>
+                        {/* <h3>{details.title}</h3> */}
                         <img
                             src={details.poster}
                             alt={details.title}
                         />
                     </div>
-
-                    {/* TODO: render this on one line */}
-                    <div>
-                        {genres.map((each, i) => (
-                            <p key={i} className="genre-item">{each.name}</p>
-                        ))}
-                    </div>
-                    <div className="description">
-                        <p>{details.description}</p>
-                    </div>
-                    <div className="back-btn">
+                    <div className="genre-description">
+                        {/* TODO: render this on one line and palette matches buttons */}
+                        <div className="genre-container">
+                            {genres.map((each, i) => (
+                                <p key={i} className="genre-item">{each.name}</p>
+                            ))}
+                        </div>
+                        <div>
+                            <p>{details.description}</p>
+                        </div>
+                        {/* <div className="back-btn">
                         <button onClick={() => history.push('/')} style={{ marginRight: 5 }}>Back To List</button>
+                    </div> */}
                     </div>
-                    <div className="edit-btn">
-                        {/* <button onClick={() => updateMovie(details.id)}>Edit</button> */}
-                        <EditMovieButton details={details.id} updateMovie={updateMovie} />
-                    </div>
+                </div>
+                <div className="buttons-container">
+                    <Button
+                        onClick={() => history.push('/')}
+                        style={{ marginRight: 5, marginBottom: 5 }}
+                        variant="contained"
+                    >
+                        Back To List
+                    </Button>
+                    {/* <button onClick={() => updateMovie(details.id)}>Edit</button> */}
+                    <EditMovieButton details={details.id} updateMovie={updateMovie} />
                 </div>
             </Box>
         </Modal>

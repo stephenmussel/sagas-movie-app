@@ -52,8 +52,14 @@ Suspendisse euismod volutpat aliquet. Maecenas vulputate mauris in pellentesque 
 ![Home](/public/images/home-view.jpg)
 <br /><br />
 
+![Movie Details](/public/images/movie-details-view.jpg)
+<br /><br />
+
+![Edit Movie Details](/public/images/edit-movie-details-view.jpg)
+<br /><br />
+
 ![Add Movie](/public/images/add-movie-view.jpg)
-<br />
+<br /><br />
 
 <!-- [Giphy API]() -->
 <br /> 
