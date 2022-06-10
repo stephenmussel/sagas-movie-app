@@ -58,9 +58,6 @@ Suspendisse euismod volutpat aliquet. Maecenas vulputate mauris in pellentesque 
 ![Edit Movie Details](/public/images/edit-movie-details-view.jpg)
 <br /><br />
 
-![Add Movie](/public/images/add-movie-view.jpg)
-<br /><br />
-
 <!-- [Giphy API]() -->
 <br /> 
 
