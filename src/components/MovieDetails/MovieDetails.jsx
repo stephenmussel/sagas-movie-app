@@ -71,7 +71,7 @@ function MovieDetails() {
             <Box sx={{ ...style, width: 750 }}>
                 <div className="details-container">
                     <div className="title-poster">
-                        {/* <h3>{details.title}</h3> */}
+                        <h3>{details.title}</h3>
                         <img
                             src={details.poster}
                             alt={details.title}

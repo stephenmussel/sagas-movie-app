@@ -46,7 +46,7 @@ function EditMovieButton() {
                     aria-describedby="child-modal-description"
                 >
                     <Box sx={{ ...style, width: 750 }}>
-                        <h2 id="child-modal-title">Make Edits</h2>
+                        <h2 id="child-modal-title">Edit Movie</h2>
                         <EditMovieForm handleClose={handleClose} />
                         {/* <Button onClick={handleClose}>Cancel</Button> */}
                     </Box>
