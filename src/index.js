@@ -27,6 +27,9 @@ function* deleteMovie(action) {
         console.log('deleteMovie saga wired!');
         const deleteId = action.payload;
         console.log('movie id to delete:', deleteId);
+
+        // added prompt to confirm deletion
+        if(confirm('Are you sure you want to delete this?'))
         yield axios.delete(`/api/movie/${deleteId}`);
 
         // GETs updates list
