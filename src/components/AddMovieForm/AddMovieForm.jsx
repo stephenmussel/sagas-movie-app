@@ -131,6 +131,7 @@ function AddMovieForm({ handleClose }) {
                     style={{ marginBottom: 5 }}
                     sx={{ width: 200 }}
                     fullWidth
+                    value={newMovie.genre_id}
                 >
                     <MenuItem><b>Select A Genre</b></MenuItem>
                     {select.map(each => (

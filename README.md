@@ -116,8 +116,8 @@ There's a classic movie that's missing from this collection, feel free to add it
  
 - [x] Material-UI
 - [ ] Details and edit modals open on home page
-- [ ] Input validation for adding movie (fields can't be empty)
-- [ ] Input confirmation for editing movie
+- [x] Input validation for adding movie (fields can't be empty)
+- [x] Input confirmation for editing movie
 - [x] Prompt user to confirm deleting movie
 - [ ] Display all genres on movie list page. Research [array_agg](https://stackoverflow.com/questions/43458174/how-to-save-and-return-javascript-object-with-subarray-in-normalized-sql)
 - [ ] Move sagas and reducers out of your `index.js` and into separate files (ideally in `src/redux/reducers` and `src/redux/sagas` folders).

@@ -46,6 +46,8 @@ function* updateMovie(action) {
         console.log('updateMovie sage wired!');
         const movieUpdates = action.payload;
         console.log('movieUpdates:', movieUpdates);
+
+        if(confirm('Are these the correct updates?'))
         yield axios.put(`/api/movie/details/${movieUpdates.id}`, movieUpdates);
         
         // TODO: remove genre
