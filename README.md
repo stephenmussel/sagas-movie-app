@@ -21,7 +21,7 @@
       </ul>
     </li>
     <li><a href="#setup">Setup</a></li>
-    <!-- <li><a href="#usage">Usage</a></li> -->
+    <li><a href="#usage">Usage</a></li>
     <li><a href="#updates">Updates</a></li>
     <li><a href="#built-with">Built With</a></li>
     <li><a href="#acknowledgement">Acknowledgment</a></li>
@@ -37,7 +37,7 @@ _Duration: 2 Day Sprint_
 
 This is a movie management app. Click a movie to see more detailed information including: poster, genre(s), and descriptions. Maybe you don't like the movie, go ahead and delete it. Need to add to the description or spelled the title wrong, you can make edits. There's a classic movie missing from this list, you can add to it.
 
-Your project description goes here. What problem did you solve? How did you solve it? 
+<!-- Your project description goes here. What problem did you solve? How did you solve it?  -->
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -46,19 +46,7 @@ Your project description goes here. What problem did you solve? How did you solv
 ## Preview  
 <br />
 
-![Home](/public/images/home-view.jpg)
-<br /><br />
-
-![Movie Details](/public/images/movie-details-view.jpg)
-<br /><br />
-
-![Edit Movie Details](/public/images/edit-movie-details-view.jpg)
-<br /><br />
-
-![Add Movie](/public/images/add-movie-view.jpg)
-<br /><br />
-
-<!-- [Giphy API]() -->
+[Sagas Movie App Preview](/public/images/sagas-movie-app-preview.gif)
 <br /> 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -95,15 +83,31 @@ Your project description goes here. What problem did you solve? How did you solv
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Usage -->
-<!-- ## Usage
-How does someone use this application? Tell a user story here.
+## Usage
+The home page displays a list of movies.
+<br /> <br />
 
-1. xxx
-2. xxx
-3. xxx
-4. xxx
-5. xxx
-6. xxx   -->
+![Home](/public/images/home-view.jpg)
+<br /><br />
+
+Click on any movie to see more details.
+<br /> <br />
+
+![Movie Details](/public/images/movie-details-view.jpg)
+<br /><br />
+
+Maybe you'd like to add more info to the description or fix a misspelling in the tite you can edit the movie details.
+<br /> <br />
+
+![Edit Movie Details](/public/images/edit-movie-details-view.jpg)
+<br /><br />
+
+There's a classic movie that's missing from this collection, feel free to add it.
+<br /> <br />
+
+![Add Movie](/public/images/add-movie-view.jpg)
+<br /><br />
+ 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
