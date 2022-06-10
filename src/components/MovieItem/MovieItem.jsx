@@ -2,13 +2,13 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './MovieItem.css';
 
+// Material-UI
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions, IconButton } from '@mui/material';
+import { CardActionArea, CardActions, IconButton } from '@mui/material';
 import HighlightOffRoundedIcon from '@mui/icons-material/HighlightOffRounded';
-import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
 
 function MovieItem({ movie }) {
 
@@ -67,19 +67,20 @@ function MovieItem({ movie }) {
                 >
                     {movie.title}
                 </Typography>
-                <Typography
+
+                {/* TODO: display all genres of each movie on list view */}
+                {/* <Typography
                     variant="body2"
                     color="text.secondary"
                 >
                     genres go here...
-                </Typography>
+                </Typography> */}
             </CardContent>
             <IconButton
                 onClick={() => deleteMovie(movie.id)}
                 style={{ marginBottom: 5 }}
             >
                 <HighlightOffRoundedIcon>Delete</HighlightOffRoundedIcon>
-                {/* <ClearRoundedIcon>Delete</ClearRoundedIcon> */}
             </IconButton>
         </Card>
     )

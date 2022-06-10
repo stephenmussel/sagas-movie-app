@@ -1,8 +1,26 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './MovieDetails.css';
 import EditMovieButton from '../EditMovieForm/EditMovieButton';
+
+// Material-UI
+import { Box, TextField } from '@mui/material';
+import Modal from '@mui/material/Modal';
+
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    // border: '1px solid #000',
+    boxShadow: 24,
+    pt: 2,
+    px: 4,
+    pb: 3,
+};
 
 function MovieDetails() {
 
@@ -20,7 +38,8 @@ function MovieDetails() {
         console.log('in details useEffect!');
 
         // fetches details based on movieId passed!
-        dispatch({ type: 'FETCH_DETAILS', payload: { id: movieId } });
+        // dispatch({ type: 'FETCH_DETAILS', payload: { id: movieId } });
+        handleOpen();
     }, [])
 
     const updateMovie = (detailsId) => {
@@ -30,35 +49,53 @@ function MovieDetails() {
         history.push('/edit-movie');
     }
 
-    return (
-        <div className="details-container">
-            <div className="title-poster">
-                <h3>{details.title}</h3>
-                <img
-                    src={details.poster}
-                    alt={details.title}
-                />
-            </div>
-            <div className="description">
-                <p>{details.description}</p>
-            </div>
-            {/* <div>
-                <p><b>Genre</b></p>
-                <>
-                    {genres.map((each, i) => (
-                        <p key={i}>{each.name}</p>
-                    ))}
-                </>
-            </div> */}
+    const [open, setOpen] = useState(false);
 
-            <div className="back-btn">
-                <button onClick={() => history.push('/')} style={{ marginRight: 5 }}>Back To List</button>
-            </div>
-            <div className="edit-btn">
-                {/* <button onClick={() => updateMovie(details.id)}>Edit</button> */}
-                <EditMovieButton details={details.id} updateMovie={updateMovie}/>
-            </div>
-        </div>
+    const handleOpen = () => {
+        setOpen(true);
+    }
+
+    const handleClose = () => {
+        setOpen(false);
+    }
+
+    return (
+        <Modal
+            hideBackdrop
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="child-modal-title"
+            aria-describedby="child-modal-description"
+        >
+            <Box sx={{ ...style, width: 750 }}>
+                <div className="details-container">
+                    <div className="title-poster">
+                        <h3>{details.title}</h3>
+                        <img
+                            src={details.poster}
+                            alt={details.title}
+                        />
+                    </div>
+
+                    {/* TODO: render this on one line */}
+                    <div>
+                        {genres.map((each, i) => (
+                            <p key={i} className="genre-item">{each.name}</p>
+                        ))}
+                    </div>
+                    <div className="description">
+                        <p>{details.description}</p>
+                    </div>
+                    <div className="back-btn">
+                        <button onClick={() => history.push('/')} style={{ marginRight: 5 }}>Back To List</button>
+                    </div>
+                    <div className="edit-btn">
+                        {/* <button onClick={() => updateMovie(details.id)}>Edit</button> */}
+                        <EditMovieButton details={details.id} updateMovie={updateMovie} />
+                    </div>
+                </div>
+            </Box>
+        </Modal>
     )
 }
 
