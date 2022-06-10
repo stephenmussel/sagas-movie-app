@@ -46,7 +46,7 @@ This is a movie management app. Click a movie to see more detailed information i
 ## Preview  
 <br />
 
-[Sagas Movie App Preview](/public/images/sagas-movie-app-preview.gif)
+![Sagas Movie App Preview](/public/images/sagas-movie-app-preview.gif)
 <br /> 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
