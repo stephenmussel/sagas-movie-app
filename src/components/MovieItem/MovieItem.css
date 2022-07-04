@@ -1,3 +1,7 @@
 .poster {
     cursor: pointer;
 }
+
+.poster:hover {
+    opacity:50%;
+}
